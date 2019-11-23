@@ -35465,7 +35465,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _layouts_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./layouts/Header */ "./resources/js/layouts/Header.vue");
 /* harmony import */ var _layouts_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layouts/Footer */ "./resources/js/layouts/Footer.vue");
-/* harmony import */ var _views_Landing__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/Landing */ "./resources/js/views/Landing.vue");
+/* harmony import */ var _views_Landing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/Landing */ "./resources/js/views/Landing.vue");
 
 
 
@@ -35479,7 +35479,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     name: "Home",
     components: {
       header: _layouts_Header__WEBPACK_IMPORTED_MODULE_2__["default"],
-      "default": _views_Landing__WEBPACK_IMPORTED_MODULE_5__["default"],
+      "default": _views_Landing__WEBPACK_IMPORTED_MODULE_4__["default"],
       footer: _layouts_Footer__WEBPACK_IMPORTED_MODULE_3__["default"]
     }
   }]
