@@ -48,23 +48,32 @@ class LoginController extends Controller
      * @param RequestLogin $request
      * @return Response
      */
-    public function login(RequestLogin $request) {
-      $credentials = $request->only(['email', 'password']);
+    public function login(RequestLogin $request)
+    {
 
-      if (Auth::attempt($credentials)) {
+        $user = User::where('email', $request->email)->first();
 
-        $update = User::where('email', $request->email)->update(['api_token' => $this->apiToken]);
+        if ($user) {
+            if (password_verify($request->password, $user->password)) {
 
-        if($update) {
-          return response()->json([
-              'data' => auth()->user()
-          ]);
+                // Update Token
+                $login = User::where('email', $request->email)
+                    ->update(['api_token' => $this->apiToken]);
+
+                $credentials = $request->only(['email', 'password']);
+                
+                if ($login && Auth::attempt($credentials)) {
+                    // dd($request->user());
+                    return response()->json([
+                        'data' => auth()->user()
+                    ]);
+                }
+
+            } else {
+                return response()->json(['password' => 'Invalid Password'], 422);
+            }
+        } else {
+            return response()->json(['email' => 'User not found'], 422);
         }
-
-      }
-
-      return response()->json([
-          'data' => 'Wrong credential given'
-      ], 422);
     }
 }
