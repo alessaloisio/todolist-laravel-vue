@@ -18,8 +18,7 @@ Auth::routes();
 
 Route::middleware('auth:api')->group(function () {
     // User
-    Route::get('/user', function (Request $request) {
-        return response()->json($request->user);
-    });
+    Route::get('/user', 'User\UserController@show');
+    Route::post('/user', 'User\UserController@update');
 });
 
