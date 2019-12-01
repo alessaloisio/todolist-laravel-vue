@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::middleware('auth:api')->group(function () {
+    // Logout
+    Route::get('/logout', 'Auth\AuthController@logout');
     // User
     Route::get('/user', 'User\UserController@show');
     Route::post('/user', 'User\UserController@update');
+    
 });
 
