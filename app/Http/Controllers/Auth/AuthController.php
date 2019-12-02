@@ -24,7 +24,7 @@ class AuthController extends Controller
       $user->save();
 
       return response()->json([
-          'message' => 'User Logged Out'
+          'data' => 'User Logged Out'
       ]);
       
   }
